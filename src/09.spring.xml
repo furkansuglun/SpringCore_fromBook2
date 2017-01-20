@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+  	
+  	<bean id="personelBean" class="_09.Util.Set.Personel">
+  		<property name="set">
+  			<util:set set-class="java.util.TreeSet">
+  				<value>Furkan Süğlün</value>
+  				<value>Emin Erdar</value>
+  				<value>Emre Yılmaz</value>
+  				<value>Furkan Kara</value>
+  			</util:set>
+  		</property>
+  	</bean>
+  	
+  	<!-- treeset otomatik sıralama yapar -->
+  	<!--  set-class="java.util.HashSet" de kullanılarbilir -->
+  	
+</beans>

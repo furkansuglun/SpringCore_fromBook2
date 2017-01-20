@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+  		
+  		<!-- bean id = sınıf_Adı dikkat! -->
+		<bean id="employee" class="_14.AutoWiring.Beans.ByConstructor.Employee" autowire="constructor" >
+			<property name="name" value="Furkan"/>
+			<property name="surname"><value>Süğlün</value></property>
+		
+			<!--  
+			<constructor-arg>
+			<ref bean="address" />
+			</constructor-arg> 
+			-->
+			
+		</bean>	
+  	
+  		
+  			<!-- bean id = employee sınıfındaki address ile aynı  dikkat! -->
+  		<bean id="address" class="_14.AutoWiring.Beans.ByConstructor.Address">
+  			<property name="fullAddress" value="Bartın" />
+  		</bean>
+  		
+  		
+  	
+</beans>

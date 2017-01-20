@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  	
+  	<import resource="07.spring.address.xml" />
+  	<import resource="07.spring.buying.xml" />
+	<import resource="07.spring.customer.xml" />
+	<import resource="07.spring.db.xml" />
+	<import resource="07.spring.management.xml" />
+	<import resource="07.spring.rights.xml" />
+	<import resource="07.spring.selling.xml" />
+</beans>

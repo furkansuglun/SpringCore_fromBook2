@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  	
+  
+ 	
+ 
+	<bean id="beanOgrenci"
+		class="_05.Injecting.Collection.With.Ref.Ogrenci">
+		<property name="adi" value="Furkan"></property>
+		<property name="bolumu" value="Java Software Developer"></property>
+		<property name="soyadi" value="Süğlün"></property>
+		<property name="yasi" value="22"></property>
+	</bean>
+	
+	<bean id="collections" class="_05.Injecting.Collection.With.Ref.Collections">
+		<property name="lists">
+			<list>
+				<value>list in ilk değeri olacak</value>
+				<ref bean="beanOgrenci"/>
+				<bean class="_05.Injecting.Collection.With.Ref.Ogrenci">
+					<property name="adi" value="Furkan"></property>
+					<property name="bolumu" value="Java Software Developer"></property>
+					<property name="soyadi" value="Süğlün"></property>
+					<property name="yasi" value="22"></property>
+				</bean>
+			</list>
+		</property>
+		
+		<property name="sets">
+			<set>
+				<value>set in ilk değeri olacak</value>
+				<ref bean="beanOgrenci"/>
+				<bean class="_05.Injecting.Collection.With.Ref.Ogrenci">
+					<property name="adi" value="aaa"></property>
+					<property name="bolumu" value="Java Software Developer"></property>
+					<property name="soyadi" value="bbb"></property>
+					<property name="yasi" value="22"></property>
+				</bean>
+			</set>
+		</property>
+		
+		
+		<property name="maps">
+			<map>
+				<entry key="1" value="map in ilk değeri"></entry>
+				<entry key="ogrenci" value-ref="beanOgrenci"></entry>
+				<entry key="beanileogrencitanimi">
+					<bean class="_05.Injecting.Collection.With.Ref.Ogrenci">
+						<property name="adi" value="ccc"></property>
+						<property name="bolumu" value="Java Software Developer"></property>
+						<property name="soyadi" value="ddd"></property>
+						<property name="yasi" value="22"></property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+		
+		<property name="properties">
+			<props>
+				<prop key="JSF">Amokachi</prop>
+				<prop key="Hibernate">Fenerbahçeli Cemil</prop>
+				<prop key="Spring">Brigitte Baldo</prop>
+			</props>
+		</property>
+		
+	</bean>
+	
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  	
+  	
+  	<!-- bean'leri tanımlarken eğer bir bean sadece bir tane bean için kullanılıyorsa o zamna onları iç içe tnaımlayabiliriz -->
+    
+    <!-- 
+    <bean id="beanMusteri" class="_03.Inner.Beans.Musteri">
+   		<property name="siparis" ref="beanSiparis"></property>
+    </bean>
+    
+    <bean id="beanSiparis" class="_03.Inner.Beans.Siparis">
+    	<property name="tutar" value="500"/>
+    </bean>
+     -->
+     
+     <bean id="beanMusteri" class="_03.Inner.Beans.Musteri">
+     	<property name="siparis">
+     		<bean id="beanSiparis" class="_03.Inner.Beans.Siparis">
+     			<property name="tutar" value="500" />
+     		</bean>
+     	</property>
+     </bean>
+     <!-- iç içe tanımladığımız için otomatik olarak ref eklendi -->
+</beans>

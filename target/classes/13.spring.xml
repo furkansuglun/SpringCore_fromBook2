@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+  		
+  		<!-- autowire="byName"  sınıfların birbirine isimleri üzerinden bağlanmasını sağlar-->
+  		
+		<bean id="employeeBean" class="_13.AutoWiring.Beans.ByName.Employee" autowire="byName" >
+			<property name="name" value="Furkan"/>
+			<property name="surname"><value>Süğlün</value></property>
+		</bean>	
+  	
+  		<!-- <property name="address" ref="addressBean" /> bunu autowire ile container bizim için yapacak -->
+  	
+  		
+  		<!-- burada dikkat edilecek nokta :
+  			bean id=address ile Employeee address değişken ismi aynı olmalıdır.
+  			
+  		-->
+  		 
+  		 
+  		
+  		<bean id="address" class="_13.AutoWiring.Beans.ByName.Address">
+  			<property name="address" value="İstanbul" />
+  		</bean>
+  		
+  		
+  		<bean id="addressBean" class="_13.AutoWiring.Beans.ByName.Address">
+  			<property name="address" value="İstanbul - not used autowire byName" />
+  		</bean>
+  		
+  	
+</beans>
