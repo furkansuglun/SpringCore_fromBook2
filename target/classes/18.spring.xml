@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+  		
+  		
+  		 <context:annotation-config/>  
+   		
+		<bean id="lessonBean" class="_18.Qualifier.Annotation.Lesson">
+			<property name="lesson" value="Math"/>
+			<property name="point" value="100"/>
+			<!--  <property name="student" ref="studentBean"></property  @Autowired bizim için yapıyor-->
+		</bean>
+  		
+  		<bean id="studentBean" class="_18.Qualifier.Annotation.Student">
+			<property name="name" value="Furkan"/>
+			<property name="surname" value="Süğlün"/>
+			<property name="age" value="22"/>
+		</bean>
+		
+		<bean id="studentBean2" class="_18.Qualifier.Annotation.Student">
+			<property name="name" value="Ali"/>
+			<property name="surname" value="Ata"/>
+			<property name="age" value="35"/>
+		</bean>
+  		
+</beans>
